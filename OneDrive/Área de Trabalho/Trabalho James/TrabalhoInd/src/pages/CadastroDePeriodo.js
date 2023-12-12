@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React, {useState} from 'react';
 
 function CadastroDePeriodo() { 
+  //formulário de cadastro de períodos
     const [abrirPaginaDePeriodo, setabrirPaginaDePeriodo] = useState(false);
     const [dadosFormulario, setDadosFormulario] = useState({
       numeroDoPeriodo: '',
@@ -22,7 +23,7 @@ function CadastroDePeriodo() {
       const { name, value } = event.target;
       setDadosFormulario({ ...dadosFormulario, [name]: value });
     };
-
+//logica de armanezamento do formulario
     const handleSubmit = (event) => {
       event.preventDefault();
       console.log(dadosFormulario)
@@ -33,7 +34,7 @@ function CadastroDePeriodo() {
       } else {
         localStorage.setItem('periodos', JSON.stringify([dadosFormulario]))
       }
-
+//seta dados do formulario
       setDadosFormulario({
         numeroDoPeriodo: '',
         semestre: '',
@@ -48,7 +49,7 @@ function CadastroDePeriodo() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Cadastro de período
+        Período
       </Button>
       
       <Modal show={abrirPaginaDePeriodo} onHide={handleClose}>

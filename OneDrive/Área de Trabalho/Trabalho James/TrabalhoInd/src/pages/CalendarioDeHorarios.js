@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+//logica do formulario de calendario de horarios
 function CalendarioHorarios() {
   const [abrirPaginaDoCalendario, setAbrirPaginaDoCalendario] = useState(false);
   const [desafios, setDesafios] = useState([]);
@@ -86,7 +87,7 @@ function CalendarioHorarios() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Calendário de Horários
+        Calendário
       </Button>
 
       <Modal show={abrirPaginaDoCalendario} onHide={handleClose}>

@@ -1,26 +1,14 @@
-import CadastroCurso from "./pages/CadastroCurso.js";
-import CadastroDePeriodo from "./pages/CadastroDePeriodo.js";
-import CadastroProfessor from "./pages/CadastroProfessor.js";
-import CadastroDeSalas from "./pages/CadastroDeSalas.js";
-import CadastroDeDesafio from "./pages/CadastroDeDesafio.js";
-import CalendarioDeHorarios from "./pages/CalendarioDeHorarios.js";
+import Navbar from './Navbar';
 
-function App() {
 
-  
+function App(){
+  return(
+    <>
+    <Navbar/>
+    </>
 
-  return (
-    <div className="App">
-      <CalendarioDeHorarios/>
-      <CadastroCurso/>
-      <CadastroDePeriodo/>
-      <CadastroProfessor/>
-      <CadastroDeSalas/>
-      <CadastroDeDesafio/>
-      
-      
-    </div>
-  );
+
+  )
 }
 
 export default App;

@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import React, {useState} from 'react';
 
+//logica do formulario de curso
 function CadastroCurso() {
   const [abrirPaginaDoCurso, setAbrirPaginaDoCurso] = useState(false);
   const [dadosFormulario, setDadosFormulario] = useState({
@@ -20,7 +21,7 @@ function CadastroCurso() {
     setDadosFormulario({ ...dadosFormulario, [name]: value });
   };
 
- 
+//logica de armazenamento no localstorage 
  const handleSubmit = (event) => {
     event.preventDefault();
     if (localStorage.getItem('curso') != null) {
@@ -40,7 +41,7 @@ function CadastroCurso() {
   return (
     <>
     <Button variant="primary" onClick={handleShow}>
-      Cadastro de Curso
+      Curso
     </Button>
 
     <Modal show={abrirPaginaDoCurso} onHide={handleClose}>

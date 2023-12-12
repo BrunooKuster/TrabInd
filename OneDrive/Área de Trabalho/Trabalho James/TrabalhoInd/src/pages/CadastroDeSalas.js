@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.css';
 import React, {useState} from 'react';
 
+//formulário de cadastro de salas
 function CadastroDeSalas() {
   const [abrirPaginaDaSalas, setAbrirPaginaDaSalas] = useState(false);
   const [dadosFormulario, setDadosFormulario] = useState({
@@ -20,6 +21,7 @@ function CadastroDeSalas() {
     setDadosFormulario({ ...dadosFormulario, [name]: value });
   };
 
+  //logica de armazenamento no localstorage
   const handleSubmit = (event) => {
     event.preventDefault();
     if (localStorage.getItem('salas') != null) {
@@ -40,7 +42,7 @@ function CadastroDeSalas() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Cadastro de salas
+       Salas
       </Button>
       
       <Modal show={abrirPaginaDaSalas} onHide={handleClose}>

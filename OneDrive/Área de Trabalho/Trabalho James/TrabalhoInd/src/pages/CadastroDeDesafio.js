@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Table from 'react-bootstrap/Table';
 
+
+// CRIAÇÃO DE FORMULARIO PARA A TELA DESAFIO
 function CadastroDeDesafio() {
   const [abrirPaginaDoDesafio, setAbrirPaginaDeDesafio] = useState(false);
   const [dadosFormulario, setDadosFormulario] = useState({
@@ -35,7 +37,7 @@ function CadastroDeDesafio() {
     const { name, value } = event.target;
     setDadosFormulario({ ...dadosFormulario, [name]: value });
   };
-
+//LOGICA DO PROCESSAMENTO DO FORMULARIO
   const handleSubmit = (event) => {
     event.preventDefault();
     if (desafioSelecionado === null) {
@@ -102,7 +104,7 @@ function CadastroDeDesafio() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Cadastro de Desafio
+        Desafio
       </Button>
 
       <Modal show={abrirPaginaDoDesafio} onHide={handleClose}>
@@ -118,7 +120,7 @@ function CadastroDeDesafio() {
             <Form.Group controlId="periodos">
               <Form.Label>Periodos</Form.Label>
               <Form.Select onChange={handleInputChange} name="periodos">
-                <option>Selecione um dos Períodos disponíveis</option>
+                <option>Selecionar Periodo</option>
                 {
                   localStorage.getItem("periodos") != null &&
                     JSON.parse(localStorage.getItem("periodos"))
@@ -131,7 +133,7 @@ function CadastroDeDesafio() {
             <Form.Group controlId= "professor">
               <Form.Label>Professor</Form.Label>
               <Form.Select onChange={handleInputChange} name="professor">
-                <option>Selecione um dos Professores disponíveis</option>
+                <option>Selecionar professor</option>
                 {
                   localStorage.getItem("professor") != null &&
                     JSON.parse(localStorage.getItem("professor"))
@@ -184,7 +186,6 @@ function CadastroDeDesafio() {
             </Form.Group>
             <Button variant="primary" type="submit">enviar</Button>
           </Form>
-          {/* Exibir dinamicamente os desafios salvos */}
 
         </Modal.Body>
       </Modal>
@@ -203,7 +204,6 @@ function CadastroDeDesafio() {
               <th>Horário</th>
               <th>Ações</th>
               <th></th>
-              {/* Adicione outras colunas conforme necessário */}
             </tr>
           </thead>
           <tbody>
@@ -219,7 +219,6 @@ function CadastroDeDesafio() {
                   <Button variant="info" onClick={() => handleEditarDesafio(index)}>Editar</Button>
                   <Button variant="danger" onClick={() => handleExcluirDesafio(index)}>Excluir</Button>
                 </td>
-                {/* Adicione outras colunas conforme necessário */}
               </tr>
             ))}
           </tbody>
